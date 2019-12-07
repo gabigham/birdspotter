@@ -7,32 +7,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bird Spotter</title>
-  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
 </head>
 
-
-
-
-<!-- file imput   -->   
 
 
 <body>
 
     <!-- insert boot strap components, -->
-    <!-- pass image to pand-->
-
+    <!--   pass image 
 
 
     <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-    <p><label for="file" style="cursor: pointer;">Look at image</label></p>
-    <p><img id="output" width="200" /></p>
-        
+    <p><label for="file" style="cursor: pointer;">Look at image</label></p>  -->
+    
+    <input type="file" id="files" accept="image/*" name="image" onchange="loadFile(event)" />
+    <output id="list"></output>
+
+ 
+    <p> <img id="output" width="200"> </p>
+
+    <p><img src={{ image }} alt="image goes here"  height="200" width="200" > </p>
+
+    <h4>Cloudy Search</h4>
+      <p><a id="input" class="btn btn-primary btn-lg" href="/look" role="button">Look for birds</a></p>
+
+
+    <h1> {{ result }} </h1>
+   
+    
+    
     <script>
+
+    function handleFileSelect(evt) {
+       var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+       var output = [];
+       for (var i = 0, f; f = files[i]; i++) {
+          output.push(f.name);
+        }
+        document.getElementById('input').href = '/look' + '/' + output.join('');
+        }
+
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
         var loadFile = function(event) {
             var image = document.getElementById('output');
-            image.src = URL.createObjectURL(event.target.files[0]);
+            image.src = URL.createObjectURL(event.target.files[0]);        
         };
     </script>
    
