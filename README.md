@@ -1,36 +1,26 @@
-### birdspotter
+## birdspotter
 
 Birdspotter is barebones full stack app that can classify jpeg formated images bird images.  This is version 0, many improvements planned.
 
 
 
-## Getting Started
+### Getting Started
 
 Birdspotter runs on a flask server with a mongo db back end.  
 
 ### Prerequisites
 
-To run birdspotter you must have the following:
+To run birdspotter you must have the following installed, links to instructions below:
 
-python
-flask
-mongodb
+python3: https://python.org
+flask: https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask
+mongodb: https://docs.mongodb.com/manual/installation/
+
+Flask has a number of dependencies, for details refer to https://flask.palletsprojects.com/en/1.1.x/installation/, this project used homebrew to supply flask dependencies: https://brew.sh/ 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
 
 End with an example of getting some data out of the system or using it for a little demo
 
@@ -86,7 +76,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 
 
-Data supplied by following:
+## Data Sets 
 
 @techreport{WelinderEtal2010,
 	Author = {P. Welinder and S. Branson and T. Mita and C. Wah and F. Schroff and S. Belongie and P. Perona},
